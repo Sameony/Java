@@ -2,15 +2,15 @@
 public class Operations_arrs {
 
 	public static void main(String[] args) {
-		int a[] = {8,2,5,1,1,13,2,8,17,5,1,14,28};
-		int sorted[] = {1,1,2,4,5,6,6,6,6,6,7,8,9,10};
-		int[] zeroes = {1,2,0,3,2,0,0,0,4,0};
+//		int a[] = {8,2,5,1,1,13,2,8,17,5,1,14,28};
+//		int sorted[] = {1,1,2,4,5,6,6,6,6,6,7,8,9,10};
+//		int[] zeroes = {1,2,0,3,2,0,0,0,4,0};
 //		for(int i:a)
 //			System.out.print(i+" ");
 //		for(int i:sorted)
 //			System.out.print(i+" ");
-		for(int i:zeroes)
-			System.out.print(i+" ");
+//		for(int i:zeroes)
+//			System.out.print(i+" ");
 		//SECOND LARGEST
 //		int x=SecondLargest(a);
 //		System.out.println(x+" "+a[x]);
@@ -25,9 +25,9 @@ public class Operations_arrs {
 //		int new_L=RemDupFrmSortedII(sorted);
 //		for(int i=0;i<new_L;i++)
 //			System.out.print(sorted[i]+" ");
-		MovZeroEnd(zeroes);
-		for(int i:zeroes)
-			System.out.print(i+" ");
+//		MovZeroEnd(zeroes);
+//		for(int i:zeroes)
+//			System.out.print(i+" ");
 
 	}
 	public static int SecondLargest(int[] arr)
@@ -109,5 +109,29 @@ public class Operations_arrs {
 			}
 		}
 	}
+	
+	public void rotateByD(int[] nums, int key) {
+        //O(n) time but O(k%l) space
+		int l=nums.length;
+        if(l==1)
+            return;
+        int k=key%l;
+        int[] temp = new int[k];
+        int c=0;
+        for(int i=l-k;i<l;i++)
+        {
+            temp[c]=nums[i];
+            c++;
+        }
+        int i=0;
+        for(i=nums.length-1;i>=k;i--)
+        {
+            nums[i]=nums[i-k];
+        }
+        for(i=0;i<k;i++)
+        {
+            nums[i]=temp[i];
+        }
+    }
 
 }
