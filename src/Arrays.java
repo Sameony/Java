@@ -24,7 +24,7 @@ public class Arrays {
 			k+=1;
 		}
 		check c1=new check();
-		check c[]={c1};
+		//check c[]={c1};
 	
 		//2d array
 		int a[][] = {
