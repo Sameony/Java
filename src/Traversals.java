@@ -39,14 +39,14 @@ public class Traversals {
 			return;
 		else
 		{
-			
-			helper(root.left,Level+1);
-			helper(root.right,Level+1);
 			if(MaxLevel<Level)
 			{
 				System.out.println(root.data);
 				MaxLevel = Level;
 			}
+			helper(root.left,Level+1);
+			helper(root.right,Level+1);
+			
 				
 		}
 	}
